@@ -1,0 +1,17 @@
+type SubTask {
+	id: ID!
+	title: String!
+	description: String
+	task: Task
+}
+
+extend type Query {
+	findAllSubTasks: [SubTask]!
+	countSubTasks: Long!
+}
+
+extend type Mutation {
+	createSubTasks(title: String!, description: String, task: ID!): SubTask!
+	updateSubTasks(id: ID!, title: String, description: String): Subtask!
+	deleteSubTasks(id: ID!): Boolean
+}

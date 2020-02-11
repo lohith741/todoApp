@@ -1,0 +1,16 @@
+type Task {
+	id: ID!
+	name: String!
+	description: String
+}
+
+# Root
+type Query {
+	findAllTasks: [Task]!
+	countTasks: Long!
+}
+
+# Root
+type Mutation {
+	createTask(name: String!, description: String): Task!
+}
